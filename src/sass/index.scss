@@ -1,0 +1,383 @@
+$browser-default-font-size: 75px !default;
+;
+@function pr($px) {
+  @return $px / $browser-default-font-size * 1rem;
+}
+
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%in-b {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+}
+
+// 文本显示多少行就省略
+@mixin ells($row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+
+// 垂直居中，两端对齐
+.space-between {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+// 垂直居中，水平居中
+.space-around {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+html, body, div, a, p, span, ul, li, input, select, option {
+  box-sizing: border-box;
+}
+
+/* 建筑考生专属内部资料 */
+.jzks-zl{
+  .zl-title{
+    width: pr(426px);
+    height: pr(83px);
+    line-height: pr(83px);
+    background-image: linear-gradient(-12deg,
+    #cf3340 0%,
+    #db535f 100%);
+    box-shadow: pr(4px) pr(3px) pr(29px) 0px
+    rgba(207, 51, 64, 0.3);
+    border-radius: pr(20px) pr(20px) 0px 0px;
+    font-size: pr(36px);
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .zl-cont{
+    width: pr(688px);
+    border: 1px solid #e6e6e6;
+    margin: 0 auto;
+    padding: pr(30px) pr(24px) pr(30px) pr(30px);
+    .cont-row{
+      display: flex;
+      margin-bottom: pr(30px);
+      .row-num{
+        @extend %in-b;
+        width: pr(40px);
+        height: pr(40px);
+        line-height: pr(40px);
+        background-color: #ffffff;
+        box-shadow: pr(2px) pr(2px) pr(10px) 0px
+        rgba(207, 51, 64, 0.27);
+        border-radius: pr(20px) pr(20px) pr(2px) pr(20px);
+        border: solid pr(2px) #cf3340;
+        text-align: center;
+        font-size: pr(24px);
+        color: #cf3340;
+        margin-right: pr(18px);
+      }
+      .row-title{
+        font-size: pr(30px);
+        color: #444444;
+        flex: 1;
+        @extend %one;
+      }
+      .row-rs{
+        font-size: pr(26px);
+        color: #666666;
+        span{
+          color: #d13946;
+        }
+      }
+    }
+    .cont-btn{
+      display: block;
+      width: 100%;
+      line-height: pr(78px);
+      font-size: pr(30px);
+      color: #cf3340;
+      text-align: center;
+      background-color: #ffe1e3;
+      border-radius: pr(6px);
+      border: solid 1px #f0aab0;
+      margin-bottom: pr(30px);
+      .icon{
+        @extend %in-b;
+        width: pr(22px);
+        height: pr(26px);
+        background: url("../images/download_2.png") no-repeat;
+        background-size: 100% 100%;
+        margin-right: pr(13px);
+      }
+    }
+    .cont-lint{
+      font-size: pr(26px);
+      line-height: pr(40px);
+      color: #444444;
+      text-align: center;
+      a{
+        @extend %in-b;
+        color: #cf3340;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* 精品备考资料2 */
+.jpbkzl_2{
+  background-color: #fed9a9;
+  border-radius: pr(12px);
+  padding: pr(24px) pr(25px) pr(21px);
+  .jpbkzl_2-cont{
+    box-shadow: pr(2px) pr(2px) pr(10px) 0px
+    rgba(164, 36, 47, 0.31);
+    background: url("../images/icon_2.png") no-repeat top right #fff;
+    background-size: pr(144px) pr(132px);
+    border-radius: pr(11px);
+    position: relative;
+    padding: pr(30px) pr(18px);
+    .cont-value{
+      position: absolute;
+      top: pr(15px);
+      right: pr(10px);
+      font-size: pr(22px);
+      line-height: pr(28px);
+      color: #ffd955;
+      text-align: center;
+      span{
+        display: block;
+        font-size: pr(28px);
+      }
+    }
+    .cont-title{
+      font-size: pr(46px);
+      font-weight: bold;
+      line-height: pr(62px);
+      color: #333333;
+      text-align: center;
+      margin-right: pr(40px);
+      margin-bottom: pr(20px);
+      .icon{
+        @extend %in-b;
+        width: pr(52px);
+        height: pr(62px);
+        background: url("../images/icon_1.png") no-repeat;
+        background-size: 100% 100%;
+        vertical-align: middle;
+      }
+    }
+    .cont-detail{
+      background-color: #ffffff;
+      box-shadow: 0px pr(4px) pr(13px) 0px
+      rgba(247, 161, 160, 0.35);
+      border-radius: pr(9px);
+      padding: pr(20px) pr(36px);
+      margin-bottom: pr(23px);
+      .detail-row{
+        font-size: pr(26px);
+        line-height: pr(45px);
+        color: #666666;
+        &:before{
+          @extend %in-b;
+          content: '';
+          width: pr(8px);
+          height: pr(8px);
+          background-color: #d94e5a;
+          border-radius: 50%;
+          margin-right: pr(15px);
+          vertical-align: middle;
+        }
+      }
+    }
+    .cont-btn{
+      display: block;
+      width: 100%;
+      line-height: pr(88px);
+      margin: 0 auto;
+      background-image: linear-gradient(-12deg,
+          #cf3340 0%,
+          #db535f 100%);
+      border-radius: pr(8px);
+      font-size: pr(36px);
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: pr(24px);
+      .btn-l{
+        @extend %in-b;
+        width: pr(22px);
+        height: pr(27px);
+        margin-right: pr(9px);
+        background: url("../images/icon_3.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .btn-r{
+        @extend %in-b;
+        width: pr(21px);
+        height: pr(27px);
+        margin-left: pr(12px);
+        background: url("../images/icon_4.png") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .cont-hint{
+      font-size: pr(26px);
+      line-height: pr(33px);
+      color: #666666;
+      text-align: center;
+    }
+  }
+}
+
+/* 初高中辅导班 */
+.ctzfdb{
+  //width: pr(688px);
+  //height: pr(486px);
+  background: url("../images/bg_1.png") no-repeat;
+  background-size: 100% 100%;
+  padding: pr(164px) pr(50px) pr(36px);
+  .sign-in{
+    font-size: pr(30px);
+    input[type="text"], select {
+      font-family: '微软雅黑';
+      appearance: none; // 去除safari浏览器的内阴影
+      &::-webkit-input-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &:-moz-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &::-moz-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &:-ms-input-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+    }
+    select{
+      width: 100%;
+      height: pr(88px);
+      line-height: pr(88px);
+      border-radius: pr(4px);
+      border: solid 1px #eeeeee;
+      color: #333333;
+      margin-bottom: pr(30px);
+      padding: 0 1em;
+      background: url("../images/icon_5.png") no-repeat 94% center #f7f7f7;
+      background-size: pr(26px) pr(16px);
+    }
+    input{
+      width: 100%;
+      height: pr(88px);
+      background-color: #f7f7f7;
+      border-radius: pr(4px);
+      border: solid 1px #eeeeee;
+      margin-bottom: pr(30px);
+    }
+    input[type='submit']{
+      font-size: pr(32px);
+      line-height: pr(88px);
+      color: #ffffff;
+      background-image: linear-gradient(-20deg,
+          #11a0ed 0%,
+          #4bbcf9 100%);
+      box-shadow: 0px pr(9px) pr(9px) 0px
+      rgba(50, 175, 244, 0.2);
+      border-radius: pr(9px);
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* 考研、出国留学认准新东方在线 */
+.ky-xdf{
+  //width: pr(688px);
+  //height: pr(615px);
+  background: url("../images/bg_2.png") no-repeat;
+  background-size: 100% 100%;
+  padding: pr(184px) pr(39px) pr(27px);
+  .sign-in{
+    font-size: pr(30px);
+    input[type="text"], select {
+      font-family: '微软雅黑';
+      appearance: none; // 去除safari浏览器的内阴影
+      &::-webkit-input-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &:-moz-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &::-moz-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+      &:-ms-input-placeholder {
+        color: #666666;
+        font-size: inherit;
+      }
+    }
+    select{
+      width: 100%;
+      height: pr(82px);
+      line-height: pr(82px);
+      border-radius: pr(4px);
+      color: #333333;
+      margin-bottom: pr(22px);
+      padding: 0 1em;
+      background: url("../images/icon_6.png") no-repeat 94% center #f7f7f7;
+      background-size: pr(26px) pr(16px);
+    }
+    input{
+      width: 100%;
+      height: pr(82px);
+      background-color: #f7f7f7;
+      border-radius: pr(4px);
+      border: solid 1px #eeeeee;
+      margin-bottom: pr(22px);
+    }
+    input[type='submit']{
+      font-size: pr(32px);
+      line-height: pr(82px);
+      color: #ffffff;
+      background-image: linear-gradient(-41deg,
+          #ff912c 0%,
+          #ffaa5d 100%);
+      box-shadow: 0px pr(4px) pr(13px) 0px
+      rgba(0, 178, 184, 0.26);
+      border-radius: pr(4px);
+      margin-bottom: 0;
+      border: none;
+    }
+  }
+}
+
+/* 简单学习网精品课 */
+.jdxxw-jpk{
+
+}
