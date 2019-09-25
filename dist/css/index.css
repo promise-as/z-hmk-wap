@@ -1,17 +1,21 @@
 @charset "UTF-8";
-.jzks-zl .zl-cont .cont-row .row-title {
+.jzks-zl .zl-cont .cont-row .row-title, .jdxxw-jpk .jpk-cont ul li {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.jzks-zl .zl-cont .cont-row .row-num, .jzks-zl .zl-cont .cont-btn .icon, .jzks-zl .zl-cont .cont-lint a, .jpbkzl_2 .jpbkzl_2-cont .cont-title .icon, .jpbkzl_2 .jpbkzl_2-cont .cont-detail .detail-row:before, .jpbkzl_2 .jpbkzl_2-cont .cont-btn .btn-l, .jpbkzl_2 .jpbkzl_2-cont .cont-btn .btn-r {
+.jzks-zl .zl-cont .cont-row .row-num, .jzks-zl .zl-cont .cont-btn .icon, .jzks-zl .zl-cont .cont-lint a, .jpbkzl_2 .jpbkzl_2-cont .cont-title .icon, .jpbkzl_2 .jpbkzl_2-cont .cont-detail .detail-row:before, .jpbkzl_2 .jpbkzl_2-cont .cont-btn .btn-l, .jpbkzl_2 .jpbkzl_2-cont .cont-btn .btn-r, .ctzfdb .sign-in .ctzfdb-btn, .jdxxw-jpk .jpk-title .icon, .jdxxw-jpk .jpk-cont ul li:before, .jdxxw-jpk .jpk-btn, .jdxxw-jpk .jpk-btn .icon, .jdxxw-jpk .jpk-btn span {
   display: inline-block;
   *zoom: 1;
   *display: inline;
 }
 
-.space-between {
+.wrap {
+  background-color: #f1f1f1;
+}
+
+.space-between, .jdxxw-jpk .jpk-trait, .jdxxw-jpk .jpk-hd {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,12 +42,13 @@
       justify-content: space-around;
 }
 
-html, body, div, a, p, span, ul, li, input, select, option {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+/* 建筑考生专属内部资料 */
+.jzks-zl {
+  background-color: #fff;
+  margin-bottom: 0.26667rem;
+  padding-bottom: 0.26667rem;
 }
 
-/* 建筑考生专属内部资料 */
 .jzks-zl .zl-title {
   width: 5.68rem;
   height: 1.10667rem;
@@ -253,35 +258,36 @@ html, body, div, a, p, span, ul, li, input, select, option {
   background: url("../images/bg_1.png") no-repeat;
   background-size: 100% 100%;
   padding: 2.18667rem 0.66667rem 0.48rem;
+  margin-bottom: 0.26667rem;
 }
 
 .ctzfdb .sign-in {
   font-size: 0.4rem;
 }
 
-.ctzfdb .sign-in input[type="text"], .ctzfdb .sign-in select {
+.ctzfdb .sign-in select {
   font-family: '微软雅黑';
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 }
 
-.ctzfdb .sign-in input[type="text"]::-webkit-input-placeholder, .ctzfdb .sign-in select::-webkit-input-placeholder {
+.ctzfdb .sign-in select::-webkit-input-placeholder {
   color: #666666;
   font-size: inherit;
 }
 
-.ctzfdb .sign-in input[type="text"]:-moz-placeholder, .ctzfdb .sign-in select:-moz-placeholder {
+.ctzfdb .sign-in select:-moz-placeholder {
   color: #666666;
   font-size: inherit;
 }
 
-.ctzfdb .sign-in input[type="text"]::-moz-placeholder, .ctzfdb .sign-in select::-moz-placeholder {
+.ctzfdb .sign-in select::-moz-placeholder {
   color: #666666;
   font-size: inherit;
 }
 
-.ctzfdb .sign-in input[type="text"]:-ms-input-placeholder, .ctzfdb .sign-in select:-ms-input-placeholder {
+.ctzfdb .sign-in select:-ms-input-placeholder {
   color: #666666;
   font-size: inherit;
 }
@@ -299,16 +305,8 @@ html, body, div, a, p, span, ul, li, input, select, option {
   background-size: 0.34667rem 0.21333rem;
 }
 
-.ctzfdb .sign-in input {
+.ctzfdb .sign-in .ctzfdb-btn {
   width: 100%;
-  height: 1.17333rem;
-  background-color: #f7f7f7;
-  border-radius: 0.05333rem;
-  border: solid 1px #eeeeee;
-  margin-bottom: 0.4rem;
-}
-
-.ctzfdb .sign-in input[type='submit'] {
   font-size: 0.42667rem;
   line-height: 1.17333rem;
   color: #ffffff;
@@ -317,6 +315,7 @@ html, body, div, a, p, span, ul, li, input, select, option {
           box-shadow: 0px 0.12rem 0.12rem 0px rgba(50, 175, 244, 0.2);
   border-radius: 0.12rem;
   margin-bottom: 0;
+  text-align: center;
 }
 
 /* 考研、出国留学认准新东方在线 */
@@ -391,3 +390,112 @@ html, body, div, a, p, span, ul, li, input, select, option {
 }
 
 /* 简单学习网精品课 */
+.jdxxw-jpk {
+  background: url("../images/bg_3.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 0.62667rem 0.66667rem 0.66667rem;
+}
+
+.jdxxw-jpk .jpk-title {
+  font-size: 0.61333rem;
+  font-weight: bold;
+  line-height: 0.73333rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 0.58667rem;
+}
+
+.jdxxw-jpk .jpk-title .icon {
+  width: 0.73333rem;
+  height: 0.73333rem;
+  background: url("../images/icon_7.png") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-right: 0.13333rem;
+}
+
+.jdxxw-jpk .jpk-trait {
+  margin-bottom: 0.6rem;
+}
+
+.jdxxw-jpk .jpk-trait .trait-item {
+  width: 2.38667rem;
+  height: 0.76rem;
+  line-height: 0.76rem;
+  background-color: #ffffff;
+  border-radius: 0.16rem;
+  border: solid 1px #41a8dd;
+  font-size: 0.34667rem;
+  color: #13a3ed;
+  text-align: center;
+}
+
+.jdxxw-jpk .jpk-hd {
+  margin-bottom: 0.44rem;
+}
+
+.jdxxw-jpk .jpk-hd .hd-item {
+  font-size: 0.4rem;
+  line-height: 0.4rem;
+  color: #333333;
+  background: url("../images/icon_8.png") no-repeat left center;
+  background-size: 0.2rem 0.2rem;
+  padding-left: 0.4rem;
+}
+
+.jdxxw-jpk .jpk-cont {
+  border-radius: 7px;
+  border: solid 1px #41a8dd;
+  padding: 0.4rem 0.36rem;
+  margin-bottom: 0.26667rem;
+}
+
+.jdxxw-jpk .jpk-cont ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 0.4rem;
+}
+
+.jdxxw-jpk .jpk-cont ul li {
+  width: 2.62667rem;
+  font-size: 0.37333rem;
+  line-height: 0.37333rem;
+  color: #666666;
+}
+
+.jdxxw-jpk .jpk-cont ul li:before {
+  content: '';
+  width: 0.12rem;
+  height: 0.12rem;
+  background-color: #666666;
+  border-radius: 50%;
+  margin-right: 0.13333rem;
+  vertical-align: middle;
+}
+
+.jdxxw-jpk .jpk-btn {
+  width: 100%;
+  height: 1.22667rem;
+  line-height: 1.22667rem;
+  background-image: linear-gradient(-20deg, #11a0ed 0%, #4bbcf9 100%);
+  -webkit-box-shadow: 0px 0.12rem 0.12rem 0px rgba(50, 175, 244, 0.2);
+          box-shadow: 0px 0.12rem 0.12rem 0px rgba(50, 175, 244, 0.2);
+  border-radius: 0.12rem;
+  font-size: 0.42667rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.jdxxw-jpk .jpk-btn .icon {
+  width: 0.44rem;
+  height: 0.26667rem;
+  background: url("../images/icon_9.png") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: top;
+  margin-top: 0.14667rem;
+}
+
+.jdxxw-jpk .jpk-btn span {
+  margin-left: -0.26667rem;
+}

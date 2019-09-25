@@ -16,18 +16,6 @@ $browser-default-font-size: 75px !default;
   *display: inline;
 }
 
-%clearfix {
-  zoom: 1;
-  &:after {
-    clear: both;
-  }
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-}
-
 // 文本显示多少行就省略
 @mixin ells($row) {
   overflow: hidden;
@@ -35,6 +23,10 @@ $browser-default-font-size: 75px !default;
   display: -webkit-box;
   -webkit-line-clamp: $row;
   -webkit-box-orient: vertical;
+}
+
+.wrap{
+  background-color: #f1f1f1;
 }
 
 // 垂直居中，两端对齐
@@ -52,12 +44,11 @@ $browser-default-font-size: 75px !default;
   justify-content: space-around;
 }
 
-html, body, div, a, p, span, ul, li, input, select, option {
-  box-sizing: border-box;
-}
-
 /* 建筑考生专属内部资料 */
 .jzks-zl{
+  background-color: #fff;
+  margin-bottom: pr(20px);
+  padding-bottom: pr(20px);
   .zl-title{
     width: pr(426px);
     height: pr(83px);
@@ -251,14 +242,13 @@ html, body, div, a, p, span, ul, li, input, select, option {
 
 /* 初高中辅导班 */
 .ctzfdb{
-  //width: pr(688px);
-  //height: pr(486px);
   background: url("../images/bg_1.png") no-repeat;
   background-size: 100% 100%;
   padding: pr(164px) pr(50px) pr(36px);
+  margin-bottom: pr(20px);
   .sign-in{
     font-size: pr(30px);
-    input[type="text"], select {
+    select {
       font-family: '微软雅黑';
       appearance: none; // 去除safari浏览器的内阴影
       &::-webkit-input-placeholder {
@@ -290,15 +280,9 @@ html, body, div, a, p, span, ul, li, input, select, option {
       background: url("../images/icon_5.png") no-repeat 94% center #f7f7f7;
       background-size: pr(26px) pr(16px);
     }
-    input{
+    .ctzfdb-btn{
+      @extend %in-b;
       width: 100%;
-      height: pr(88px);
-      background-color: #f7f7f7;
-      border-radius: pr(4px);
-      border: solid 1px #eeeeee;
-      margin-bottom: pr(30px);
-    }
-    input[type='submit']{
       font-size: pr(32px);
       line-height: pr(88px);
       color: #ffffff;
@@ -309,6 +293,7 @@ html, body, div, a, p, span, ul, li, input, select, option {
       rgba(50, 175, 244, 0.2);
       border-radius: pr(9px);
       margin-bottom: 0;
+      text-align: center;
     }
   }
 }
@@ -379,5 +364,108 @@ html, body, div, a, p, span, ul, li, input, select, option {
 
 /* 简单学习网精品课 */
 .jdxxw-jpk{
-
+  background: url("../images/bg_3.png") no-repeat;
+  background-size: 100% 100%;
+  padding: pr(47px) pr(50px) pr(50px);
+  .jpk-title{
+    font-size: pr(46px);
+    font-weight: bold;
+    line-height: pr(55px);
+    color: #333333;
+    text-align: center;
+    margin-bottom: pr(44px);
+    .icon{
+      @extend %in-b;
+      width: pr(55px);
+      height: pr(55px);
+      background: url("../images/icon_7.png") no-repeat;
+      background-size: 100% 100%;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: pr(10px);
+    }
+  }
+  .jpk-trait{
+    @extend .space-between;
+    margin-bottom: pr(45px);
+    .trait-item{
+      width: pr(179px);
+      height: pr(57px);
+      line-height: pr(57px);
+      background-color: #ffffff;
+      border-radius: pr(12px);
+      border: solid 1px #41a8dd;
+      font-size: pr(26px);
+      color: #13a3ed;
+      text-align: center;
+    }
+  }
+  .jpk-hd{
+    @extend .space-between;
+    margin-bottom: pr(33px);
+    .hd-item{
+      font-size: pr(30px);
+      line-height: pr(30px);
+      color: #333333;
+      background: url("../images/icon_8.png") no-repeat left center;
+      background-size: pr(15px) pr(15px);
+      padding-left: pr(30px);
+    }
+  }
+  .jpk-cont{
+    border-radius: 7px;
+    border: solid 1px #41a8dd;
+    padding: pr(30px) pr(27px);
+    margin-bottom: pr(20px);
+    ul{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: pr(30px);
+      li{
+        width: pr(197px);
+        font-size: pr(28px);
+        line-height: pr(28px);
+        color: #666666;
+        @extend %one;
+        &:before{
+          content: '';
+          @extend %in-b;
+          width: pr(9px);
+          height: pr(9px);
+          background-color: #666666;
+          border-radius: 50%;
+          margin-right: pr(10px);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .jpk-btn{
+    @extend %in-b;
+    width: 100%;
+    height: pr(92px);
+    line-height: pr(92px);
+    background-image: linear-gradient(-20deg,
+    #11a0ed 0%,
+    #4bbcf9 100%);
+    box-shadow: 0px pr(9px) pr(9px) 0px
+    rgba(50, 175, 244, 0.2);
+    border-radius: pr(9px);
+    font-size: pr(32px);
+    color: #ffffff;
+    text-align: center;
+    .icon{
+      @extend %in-b;
+      width: pr(33px);
+      height: pr(20px);
+      background: url("../images/icon_9.png") no-repeat;
+      background-size: 100% 100%;
+      vertical-align: top;
+      margin-top: pr(11px);
+    }
+    span{
+      @extend %in-b;
+      margin-left: pr(-20px);
+    }
+  }
 }
